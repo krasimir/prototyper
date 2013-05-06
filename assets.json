@@ -1,0 +1,9 @@
+[
+	{
+	    "type": "js",
+	    "watch": "lib",
+	    "pack": ["lib"],
+	    "output": "lib/prototyper.min.js",
+	    "minify": true
+	}
+]
