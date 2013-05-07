@@ -6,20 +6,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<script src="../lib/prototyper.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			Prototyper
-			.setData({
-				title: "Prototyper is really simple",
-				menu: [
-					{ label: "Home", description: "That's the home page"},
-					{ label: "About", description: "More inforomation about us"},
-					{ label: "Contacts", description: "Click here to find us"}
-				]
-			})
-			.on("done", function(file) {
+			prototyper.on("done", function(file) {
 				console.log("done");
 			});
 			window.onload = function() {
-				Prototyper.run();
+				prototyper.run(
+					document.querySelectorAll("body"),
+					{
+						title: "Prototyper is really simple",
+						menu: [
+							{ label: "Home", description: "That's the home page"},
+							{ label: "About", description: "More inforomation about us"},
+							{ label: "Contacts", description: "Click here to find us"}
+						]
+					}
+				);
 			}
 		</script>
 	</head>

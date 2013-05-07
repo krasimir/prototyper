@@ -5,8 +5,8 @@ Helpful tool for building responsive design html prototypes. It looks like a tem
 ## Usage
 
   1. Import *prototyper.js* in your page
-  2. Add data or/and attach event listeners to *Prototyper* 
-  2. In your bootstrap script call *Prototyper.run()*
+  2. Attach event listeners to *prototyper* 
+  2. In your bootstrap script call *prototyper.run(DOMElement, data)*
 
 * check the example in */test* directory for better illustration
 
@@ -20,31 +20,33 @@ Feel free to use nested templates.
 	</body>
 
 ### Adding external data to the template
+*Prototyper* uses [mustache](http://mustache.github.io/)'s similar syntax, so you can convert the html templates easily later.
 
-	<script type="text/javascript">
-		Prototyper.setData({
+	prototyper.run(
+		document.querySelectorAll("body"),
+		{
 			title: "Prototyper is really simple",
 			menu: [
-				{ label: "Home"},
-				{ label: "About"},
-				{ label: "Contacts"}
+				{ label: "Home", description: "That's the home page"},
+				{ label: "About", description: "More inforomation about us"},
+				{ label: "Contacts", description: "Click here to find us"}
 			]
-		})
-	</script>
+		}
+	)
 
 then in your html
 
 	<header>
-		<h1><!-- data title --></h1>
+		<h1>{{title}}</h1>
 	</header>
 
 or 
 
 	<header>
 		<ul>
-			<li><a href="#"><!-- data menu.label --></a></li>
-			<li><a href="#"><!-- data menu.label --></a></li>
-			<li><a href="#"><!-- data menu.label --></a></li>
+			<li><a href="#" title="{{menu.description}}">{{menu.label}}</a></li>
+			<li><a href="#" title="{{menu.description}}">{{menu.label}}</a></li>
+			<li><a href="#" title="{{menu.description}}">{{menu.label}}</a></li>
 		</ul>
 	</header>
 
