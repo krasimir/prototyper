@@ -15,18 +15,8 @@
 					{ label: "Contacts"}
 				]
 			})
-			.on("include", function(file) {
-				if(file == "header.html") {
-					console.log("header loaded");
-				}
-				if(file == "content.html") {
-					console.log("content loaded");	
-				}
-			})
-			.on("data", function(path) {
-				if(path === "menu.label") {
-					console.log("menu label set");
-				}
+			.on("done", function(file) {
+				console.log("done");
 			});
 			window.onload = function() {
 				Prototyper.run();
