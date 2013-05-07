@@ -49,21 +49,14 @@ or
 	</header>
 
 ### Events
+Currently there is only one event to add listener to - *done*.
 
-	Prototyper
-	.on("include", function(file) {
-		if(file === "content.html") {
-			// ... do some stuff ...
-		}
-	})
-	.on("data", function(path) {
-		if(path == "menu.label") {
-			// ... do some stuff ...	
-		}
+	Prototyper.on("done", function() {
+		// prototyper finishes its job
 	});
 
 ## Used resources
 
-[http://www.w3schools.com/dom/dom_nodetype.asp](http://www.w3schools.com/dom/dom_nodetype.asp)
-[https://github.com/padolsey/commentData/blob/master/commentdata.js](https://github.com/padolsey/commentData/blob/master/commentdata.js)
-[http://james.padolsey.com/javascript/metadata-within-html-comments/](http://james.padolsey.com/javascript/metadata-within-html-comments/)
+  [http://www.w3schools.com/dom/dom_nodetype.asp](http://www.w3schools.com/dom/dom_nodetype.asp)
+  [https://github.com/padolsey/commentData/blob/master/commentdata.js](https://github.com/padolsey/commentData/blob/master/commentdata.js)
+  [http://james.padolsey.com/javascript/metadata-within-html-comments/](http://james.padolsey.com/javascript/metadata-within-html-comments/)
