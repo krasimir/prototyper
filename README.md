@@ -5,7 +5,7 @@ Helpful tool for building responsive design html prototypes. It looks like a tem
 ## Usage
 
   1. Import *prototyper.js* in your page
-  2. Attach event listeners to *prototyper* 
+  2. Attach event listeners to *prototyper* (if you need  to)
   2. In your bootstrap script call *prototyper.run(DOMElement, data)*
 
 * check the example in */test* directory for better illustration
