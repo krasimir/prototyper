@@ -1,20 +1,28 @@
-prototyper.js
-==========
+# Prototyper
 
-Helpful tool for building responsive design html prototypes. It looks like a template engine, but it's not. The main idea behind it was to be super simple and fast. Most of the similar libraries uses a little bit complex solutions for such a simple task. Also they add a lot of unnecessary markup. In *prototyper* the instructions are set in HTML comments. So even if you remove *prototyper* your markup will look ok.
+Helpful tool for building responsive design html prototypes. It looks like a template engine, but it's not. The main idea behind it was to be much simpler. Most of the similar libraries uses a little bit complex solutions. Also they add a lot of unnecessary markup. In *prototyper* the instructions are set in HTML comments. So even if you remove *prototyper* from your page the markup will look ok.
 
-## Features
+## Usage
+
+  1. Import *prototyper.js* in your page
+  2. Add data or/and attach event listeners to *Prototyper* 
+  2. In your bootstrap script call *Prototyper.run()*
+
+* check the example in */test* directory for better illustration
+
+## Commands
 
 ### Including another template
+Feel free to use nested templates.
 
 	<body>
 		<!-- include templates/header.html -->
 	</body>
 
-### Adding predefined data
+### Adding external data to the template
 
 	<script type="text/javascript">
-		PR.setData({
+		Prototyper.setData({
 			title: "Prototyper is really simple",
 			menu: [
 				{ label: "Home"},
@@ -40,8 +48,21 @@ or
 		</ul>
 	</header>
 
+### Events
 
-## Development sources
+	Prototyper
+	.on("include", function(file) {
+		if(file === "content.html") {
+			// ... do some stuff ...
+		}
+	})
+	.on("data", function(path) {
+		if(path == "menu.label") {
+			// ... do some stuff ...	
+		}
+	});
+
+## Used resources
 
 [http://www.w3schools.com/dom/dom_nodetype.asp](http://www.w3schools.com/dom/dom_nodetype.asp)
 [https://github.com/padolsey/commentData/blob/master/commentdata.js](https://github.com/padolsey/commentData/blob/master/commentdata.js)
